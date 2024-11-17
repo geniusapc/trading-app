@@ -1,0 +1,30 @@
+# Define variables
+VENV_DIR := .venv
+APP_MODULE := app.main:app
+
+
+# Detect the platform (Windows or Unix-based)
+ifeq ($(OS),Windows_NT)
+    VENV_BIN := $(VENV_DIR)/Scripts
+else
+    VENV_BIN := $(VENV_DIR)/bin
+endif
+
+# Create virtual environment
+.PHONY: create_venv
+create_venv:
+	python -m venv $(VENV_DIR)
+
+# Install dependencies from requirements.txt
+.PHONY: install_requirements
+install_requirements: create_venv
+	$(VENV_BIN)/pip install -r requirements.txt
+
+# Start the FastAPI application
+.PHONY: start_app
+start_app:
+	$(VENV_BIN)/uvicorn $(APP_MODULE) --reload
+
+# Run all: create virtual environment, install packages, and start the app
+.PHONY: run_all
+run_all: install_requirements start_app

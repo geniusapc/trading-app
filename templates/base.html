@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}X Trading App{% endblock %}</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to X Trading App</h1>
+    </header>
+
+    <div id="notification" class="hidden"></div>
+    <nav class="navbar">
+      <a href="deriv" class="nav-link" id="deriv-link">Deriv Trading</a>
+      <a href="tws" class="nav-link" id="tws-link">Interactive Brokers</a>
+    </nav>
+
+    <main>
+      <h1>Place a Trade</h1>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <p>&copy; 2024 Trading App</p>
+    </footer>
+
+    <script type="module" src="/static/script/index.js"></script>
+  </body>
+</html>

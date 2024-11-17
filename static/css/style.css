@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+#notification {
+  position: fixed;
+  top: 20px;
+  right: -300px; /* Start off-screen */
+  z-index: 1000;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.5s ease, right 0.5s ease;
+}
+
+#notification.success {
+  background-color: #4caf50; /* Green for success */
+}
+
+#notification.error {
+  background-color: #f44336; /* Red for error */
+}
+
+/* Ensures the notification is not visible when hidden */
+#notification.hidden {
+  display: none;
+}
+
+/* Ensure notification appears smoothly */
+#notification.show {
+  display: block;
+  opacity: 1;
+  right: 20px; /* Slide in to the right */
+}
+
+/* Navbar styles */
+.navbar {
+  background-color: #333;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.navbar .nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+
+.navbar .nav-link:hover {
+  background-color: #575757;
+  border-radius: 5px;
+}
+
+.navbar .nav-link.active {
+  background-color: #007bff; /* Highlight color */
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin: 15px 0 5px;
+}
+
+input,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Buy button styling */
+#buyButton {
+  background-color: #007bff;
+  color: white;
+}
+
+#buyButton:hover {
+  background-color: #0056b3;
+}
+
+/* Sell button styling */
+#sellButton {
+  background-color: #dc3545; /* Bootstrap danger color */
+  color: white;
+}
+
+#sellButton:hover {
+  background-color: #c82333; /* Darker shade for hover effect */
+}
+
+p {
+  font-size: 18px;
+  color: #333;
+}
+
+#currentPrice,
+#currentProfit,
+#payoutValue {
+  font-weight: bold;
+}
+
+@media (min-width: 600px) {
+  body {
+    max-width: 600px;
+    margin: auto;
+  }
+
+  h1 {
+    font-size: 2.5em;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 18px;
+  }
+}
