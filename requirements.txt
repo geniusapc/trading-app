@@ -2,3 +2,7 @@ jinja2
 ib-insync
 fastapi
 uvicorn
+websocket-client
+websocket
+websockets
+ibapi

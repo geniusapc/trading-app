@@ -1,0 +1,39 @@
+{% extends "base.html" %} {% block title %}Deriv{% endblock %} {% block content
+%}
+
+<form id="tradeForm">
+<label for="symbol-select">Select Symbol:</label>
+<select id="symbol-select">
+    <option value="" disabled selected>Loading symbols...</option>
+</select>
+
+<br />
+
+<label for="ib-symbol">IB Symbol (optional):</label>
+<input type="text" id="ib-symbol" /><br />
+
+<!-- Input fields for options trading parameters -->
+<label for="daysToExpiry">Number of Days to Expiry:</label>
+<input type="number" id="daysToExpiry" min="1" value="1" /><br />
+
+<label for="amountToStake">Amount to Stake (USD):</label>
+<input type="number" id="amountToStake" min="1" value="1000" /><br />
+
+<label for="strikePrice">Rise or Fall Value (Strike Price):</label>
+<input type="number" id="strikePrice" step="0.0001" value="100" /><br />
+
+
+<label for="tragetProfit">Target Profit (USD):</label>
+<input type="number" id="tragetProfit" min="1"  required/><br />
+
+<!-- Display the current price -->
+<p>Current Price: <span id="currentPrice">0.00</span></p>
+
+<!-- Buttons for Buy (Rise) and Sell (Fall) -->
+<button id="buyButton">Buy (Rise)</button>
+<button id="sellButton">Sell (Fall)</button>
+</form>
+
+
+
+{% endblock %}

@@ -7,7 +7,7 @@ templates = Jinja2Templates(directory="templates")
 
 @router.get("/", response_class=HTMLResponse)
 async def home(request: Request):
-    return templates.TemplateResponse("deriv.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @router.get("/deriv", response_class=HTMLResponse)
 async def deriv(request: Request):
